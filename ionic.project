@@ -1,0 +1,12 @@
+{
+  "name": "kanyel8tor",
+  "app_id": "8a829939",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
