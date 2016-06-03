@@ -1,0 +1,32 @@
+  <div class="keypad-display" >
+    <div class="calculator-display">
+      <div id="calculator-display">Type Something</div>
+      <button ng-click="clearMem()" class="clear button button-clear button-light"> C </button>
+    </div>
+
+    <div class="keypad">
+      <div class="keypad-row">
+        <button ng-click="keypress(1)" class="button button-clear button-light">1</button>
+        <button ng-click="keypress(2)" class="button button-clear button-light">2</button>
+        <button ng-click="keypress(3)" class="button button-clear button-light">3</button>
+
+        <button ng-click="operator(&apos;+&apos;)" class="button button-clear button-light operator">+</button>
+
+        <button ng-click="operator(&apos;-&apos;)" class="button button-clear button-light operator">-</button>
+      </div>
+      <div class="keypad-row">
+        <button ng-click="keypress(4)" class="button button-clear button-light">4</button>
+        <button ng-click="keypress(5)" class="button button-clear button-light">5</button>
+        <button ng-click="keypress(6)" class="button button-clear button-light">6</button>
+        <button ng-click="operator(&apos;*&apos;)" class="button button-clear button-light operator">&#xD7;</button>
+        <button ng-click="operator(&apos;/&apos;)" class="button button-clear button-light operator">&#xF7;</button>
+      </div>
+      <div class="keypad-row">
+        <button ng-click="keypress(7)" class="button button-clear button-light">7</button>
+        <button ng-click="keypress(8)" class="button button-clear button-light">8</button>
+        <button ng-click="keypress(9)" class="button button-clear button-light">9</button>
+        <button ng-click="keypress(0)" class="button button-clear button-light">0</button>
+        <button ng-click="equals();makeCard()" class="button button-clear button-light operator equals">=</button>
+      </div>
+    </div>
+  </div>

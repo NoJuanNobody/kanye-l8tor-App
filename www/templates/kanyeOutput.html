@@ -1,0 +1,21 @@
+<div class="row output-slide">
+  <div class="col">
+    <p class="narrative" ng-hide="res.bool">kanye is feeling self consious</p>
+    <img style="max-width:100%" ng-src="{{imgPath}}" alt="">
+  </div>
+  <div class="col">
+    <div class="quote">
+      {{quote}}
+    </div>
+    <div class="output-panel failure" ng-hide="res.bool">
+      Kanye guessed:
+      <br>
+      <span class="answer">i don't know its like {{card.guess()}} or something</span>
+    </div>
+    <div class="output-panel success" ng-show="res.bool">
+      answer:
+      <br>
+      <span class="answer">{{card.answer}}</span>
+    </div>
+  </div>
+</div>
