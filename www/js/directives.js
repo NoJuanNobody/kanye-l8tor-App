@@ -22,10 +22,7 @@ angular.module('starter.directives', ['ionic'])
 .directive('ngOutputAnswer', function(){
   return{
     restrict:"E",
-    require:'^ngKanye',
-    scope:{
-      card:"@"
-    },
+    // require:'^ngKanye',
     templateUrl:"templates/kanyeOutput.html"
   }
 })

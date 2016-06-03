@@ -1,6 +1,6 @@
 
   <ion-slide-box >
-    <ion-slide ng-repeat="card in cards track by $index">
-  <ng-output-answer card="{{card}}"></ng-output-answer>
-  </ion-slide>
+    <ion-slide ng-repeat="cardCalc in cards track by $index" ng-init="updateSlider()">
+      <ng-output-answer></ng-output-answer>
+    </ion-slide>
   </ion-slide-box>

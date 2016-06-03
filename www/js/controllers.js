@@ -9,18 +9,19 @@ angular.module('starter.controllers', ['ionic'])
   }
   $scope.equals=function(){
     calculatorService.equals();
-    // outputCtrl.makeCard();
   }
   $scope.clearMem=function(){
     calculatorService.clearMem();
   }
 })
 .controller('outputCtrl', function($scope, calculatorService, $ionicSlideBoxDelegate){
+
   $scope.cards=[];
   $scope.card={
     imgPath:"",
     quote:"",
     answer:null,
+    theGuess:null,
     res:{
       guessProbability:null,
       bool:null
@@ -36,35 +37,43 @@ angular.module('starter.controllers', ['ionic'])
     determineResponse: function(){
       $scope.card.outcome();
       var success = $scope.card.res;
-      this.quote=arrQuoteText[success.guessProbability][0];
-      if(success.bool){
+      this.quote=arrQuoteText[$scope.card.res.guessProbability][0];
+      if($scope.card.res.bool){
         this.imgPath="img/happyKanye.png";
         this.answer=calculatorService._answer;
       }else{
         this.imgPath="img/kanyeConfused.png"
         this.answer="";
+        this.theGuess=this.guess();
       }
-      console.log(this.imgPath);
-      console.log(this.quote);
-      console.log("probabiliy: "+this.res.guessProbability);
-      console.log("guess: "+this.guess());
     }
 
   }
   $scope.makeCard=function(){
-    $scope.cards.push($scope.card.determineResponse());
-    console.log("cards "+$scope.cards.length);
+    $scope.card.determineResponse();
+    $scope.cards.push($scope.card);
+    console.log($scope.cards);
+    console.log($scope.cards.length);
+
+
+  }
+  $scope.updateSlider=function(){
     $ionicSlideBoxDelegate.update();
-    $ionicSlideBoxDelegate.slide($scope.cards.length, 1000);
-    $scope.card.imgPath="";
-    $scope.quote="";
-    $scope.answer=null;
-    $scope.res={
-      guessProbability:null,
-      bool:null
-    };
   }
   $scope.cardsIsNull=function(){
     return $scope.cards.length ==0;
   }
-})
+});
+// .controller('soundCtrl', function($scope,sounds){
+//   var getSounds = function() {
+//         console.log('getSounds called');
+//         Sounds.get().then(function(sounds) {
+//             console.dir(sounds);
+//             $scope.sounds = sounds;
+//         });
+//     }
+//     $scope.play = function(x) {
+//         console.log('play', x);
+//         Sounds.play(x);
+//     }
+// })

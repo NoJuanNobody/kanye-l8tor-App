@@ -9895,7 +9895,8 @@ button.button.operator.equals {
 
 .quote {
   font-family: 'bebas';
-  letter-spacing: .5px; }
+  letter-spacing: .5px;
+  color: #fff; }
 
 .output-panel {
   font-family: 'bebas'; }
