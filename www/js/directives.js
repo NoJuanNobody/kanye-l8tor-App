@@ -16,14 +16,14 @@ angular.module('starter.directives', ['ionic'])
   return{
     // transclude:true,
     restrict:"E",
-    templateUrl:'templates/kanyeDisplay.html'
+    templateUrl:'templates/kanye.html'
   }
 })
-.directive('ngOutputAnswer', function(){
+.directive('ngAnswer', function(){
   return{
     restrict:"E",
     // require:'^ngKanye',
-    templateUrl:"templates/kanyeOutput.html"
+    templateUrl:"templates/answer.html"
   }
 })
 .directive('ngRest', function(){

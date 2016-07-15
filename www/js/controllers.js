@@ -15,7 +15,7 @@ angular.module('starter.controllers', ['ionic'])
   }
 })
 .controller('outputCtrl', function($scope, calculatorService, $ionicSlideBoxDelegate){
-
+  // $ionicSlideBoxDelegate.
   $scope.cards=[];
   $scope.card={
     imgPath:"",
